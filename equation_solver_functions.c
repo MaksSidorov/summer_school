@@ -33,7 +33,8 @@ int square_equation(double a, double b, double c, double solutions[]) {
     if (c == 0) {
         solutions[1] = 0;
         int linear_solutions = linear_equation(a, b, solutions);
-        if (linear_solutions != 1 || (linear_solutions == 1 && solutions[0] == solutions[1])) {
+        if (linear_solutions != ONE_SOLUTION ||
+        (linear_solutions == ONE_SOLUTION && solutions[0] == solutions[1])) {
             solutions[0] = 0;
             return ONE_SOLUTION;
         }
@@ -56,7 +57,7 @@ int square_equation(double a, double b, double c, double solutions[]) {
         solutions[0] = check_zero((-b - discriminant_sqrt) / (2 * a));
         solutions[1] = check_zero((-b + discriminant_sqrt) / (2 * a));
 
-        if (solutions[0] == solutions[1]) {
+        if (double_equality(solutions[0], solutions[1])) {
             return ONE_SOLUTION;
         }
 
