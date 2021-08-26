@@ -7,7 +7,11 @@
 //! Функция принимает на вход коэффициенты a, b, c квадратного уравнения.
 //! Пишет количество решений и сами корни
 int main() {
+
+    #ifndef NDEBUG_MODE
     run_all_tests();
+    #endif
+
     double a = NAN;
     double b = NAN;
     double c = NAN;

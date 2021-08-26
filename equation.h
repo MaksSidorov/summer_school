@@ -5,14 +5,27 @@
 #include <math.h>
 #include <assert.h>
 
+//!
+//! отключение тестирования
+#define NDEBUG_MODE
+
+//!
+//! Выключить все printf
 #ifdef MEOW
     #define printf(...)
 #endif
 
 #define DOUBLE_ERROR 0.0001
 
-enum NUM_OF_SOL {ONE_SOLUTION = 1, TWO_SOLUTIONS = 2, NO_SOLUTIONS = 0, INFINITY_SOLUTIONS = -1};
-enum ERRORS {WRONG_INPUT_ERROR = 1};
+enum NUM_OF_SOL {
+    ONE_SOLUTION       = 1,
+    TWO_SOLUTIONS      = 2,
+    NO_SOLUTIONS       = 0,
+    INFINITY_SOLUTIONS = -1
+};
+enum ERRORS {
+    WRONG_INPUT_ERROR = 1
+};
 
 //!
 //! Сравнение двух чисел типа double
