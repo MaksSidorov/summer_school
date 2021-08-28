@@ -15,12 +15,12 @@
     #define printf(...)
 #endif
 
-#define DOUBLE_ERROR 0.0001
+static const double DOUBLE_ERROR = 1e-6;
 
 enum NUM_OF_SOL {
-    ONE_SOLUTION       = 1,
-    TWO_SOLUTIONS      = 2,
-    NO_SOLUTIONS       = 0,
+    ONE_SOLUTION       =  1,
+    TWO_SOLUTIONS      =  2,
+    NO_SOLUTIONS       =  0,
     INFINITY_SOLUTIONS = -1
 };
 enum ERRORS {
@@ -39,6 +39,14 @@ int double_equality(double first, double second);
 //! \return 0, если число в рамках погрешности. В противном случае само число
 double check_zero(double val);
 //!
+//!Функция запускает тесты
+void run_all_tests(void);
+//!
+//! Функия выводит количество корней и сами корни, при их наличии.
+//! \param [in] number_solutions
+//! \param [in] solutions
+void write_number_solutions(int number_solutions, double solutions[]);
+//!
 //! Функция решает линейное уравнение.
 //! Возвращает количество решений или -1, если их бесконечно много. Записывает в solutions корень.
 //! \param [in] k
@@ -54,22 +62,5 @@ int linear_equation(double k, double b , double solutions[]);
 //! \param [out] solutions
 //! \return Количесвто корней
 int square_equation(double a, double b, double c, double solutions[]);
-//!
-//! Функция разделяет уравнение на линейное и квадратное.
-//! Возвращает количество корней или -1, в случае бесконечного количесва. Корни записываются в solutions.
-//! \param [in] a
-//! \param [in] b
-//! \param [in] c
-//! \param [out] solutions
-//! \return Количесвто корней
-int equation_solver(double a, double b, double c, double solutions[]);
-//!
-//!Функция запускает тесты
-void run_all_tests(void);
-//!
-//! Функия выводит количество корней и сами корни, при их наличии.
-//! \param [in] number_solutions
-//! \param [in] solutions
-void write_number_solutions(int number_solutions, double solutions[]);
 
 #endif // EQUATION_EQUATION_H

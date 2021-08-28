@@ -4,7 +4,7 @@ void run_test(double a, double b, double c, int true_number_solutions, double x1
     static int number_of_test = 1;
 
     double output_solutions[] = {x1, x2};
-    int output_number_solutions = equation_solver(a, b, c, output_solutions);
+    int output_number_solutions = square_equation(a, b, c, output_solutions);
 
     if (output_number_solutions != true_number_solutions) {
         printf("Wrong number of solutions on test number %d\n", number_of_test);

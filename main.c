@@ -20,8 +20,8 @@ int main() {
         return WRONG_INPUT_ERROR;
     }
 
-    double solutions[] = {NAN, NAN};
-    int number_solutions = equation_solver(a, b, c, solutions);
+    double solutions[2] = {};
+    int number_solutions = square_equation(a, b, c, solutions);
 
     write_number_solutions(number_solutions, solutions);
 

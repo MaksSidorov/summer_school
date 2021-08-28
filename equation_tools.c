@@ -1,6 +1,10 @@
 #include "equation.h"
 
 int double_equality(double first, double second) {
+
+    assert (isfinite (first));
+    assert (isfinite (second));
+
     if (fabs(first - second) < DOUBLE_ERROR) {
         return 1;
     }
